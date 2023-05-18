@@ -1,0 +1,84 @@
+.social {
+  width: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+
+  @include vp-1023 {
+    width: 116px;
+    margin-top: -3px;
+  }
+
+  @include vp-767 {
+    margin-top: 4px;
+  }
+}
+
+.social__item {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  cursor: pointer;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  @include vp-1023 {
+    width: 35px;
+    height: 35px;
+  }
+
+  @include vp-767 {
+    width: 30px;
+    height: 30px;
+    margin-right: 9px;
+  }
+
+  &--ok {
+    @include vp-767 {
+      width: 20px;
+      height: 40px;
+    }
+  }
+}
+
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.social__icon {
+  fill: $color-default-white;
+
+  @include vp-1023 {
+    width: 16px;
+    height: 16px;
+  }
+
+  &--ok {
+    @include vp-1023 {
+      margin-left: 10px;
+      width: 11px;
+      height: 16px;
+    }
+
+    @include vp-767 {
+      margin-left: -8px;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.journey {
+  background-color: $color-default-white;
+
+  @include vp-767 {
+    padding-top: 39px;
+  }
+}
+
+.journey__container {
+  display: grid;
+  grid-template-columns: auto 48%;
+  padding: 121px 50px 145px;
+  gap: 80px;
+
+  @include vp-1023 {
+    grid-template-columns: auto 48%;
+    gap: 23px;
+    padding: 100px 50px 77px 46px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: auto;
+    gap: 30px;
+    padding: 25px 15px 85px 15px;
+  }
+}
+
+.journey__text {
+  padding-top: 30px;
+
+  @include vp-1023 {
+    padding: 0 2px 0 0;
+  }
+}
+
+.journey h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 150%;
+
+  @include vp-1023 {
+    margin: -10px 0 10px;
+    font-size: 26px;
+    line-height: 140%;
+  }
+
+  @include vp-767 {
+    font-size: 24px;
+  }
+}
+
+.journey p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}

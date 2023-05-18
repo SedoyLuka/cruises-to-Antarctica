@@ -1,0 +1,235 @@
+.cruises {
+  background-color: $color-default-white;
+}
+
+.cruises__container {
+  padding: 92px 65px 120px;
+
+  @include vp-1023 {
+    padding: 95px 60px 100px;
+  }
+
+  @include vp-767 {
+    padding: 62px 25px 65px;
+  }
+}
+
+.cruises h2 {
+  display: flex;
+  margin: 0;
+  font-weight: 600;
+  font-size: 28px;
+  justify-content: center;
+
+  @include vp-1023 {
+    font-size: 26px;
+  }
+
+  @include vp-767 {
+    font-size: 24px;
+  }
+}
+
+.cruises h3 {
+  width: fit-content;
+  max-width: 200px;
+  height: min-content;
+  color: #f9fbfd;
+  z-index: 1;
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 500;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 6px;
+  left: 30px;
+
+  @include vp-1023 {
+    bottom: 10px;
+    left: 35px;
+  }
+
+  @include vp-767 {
+    bottom: 0;
+    left: 25px;
+  }
+}
+
+.cruises__list {
+  margin: 0;
+  margin-top: 60px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  @include vp-1023 {
+    margin: 59px 0 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    margin: 37px 0 0;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+
+.cruises__item img {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cruises__item {
+  scrollbar-color: $color-curious-blue $color-default-black; /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;  /* толщина */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 260/386;
+  margin: 0 auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-curious-blue;
+
+  ::-webkit-scrollbar {
+    width: 3px; /* ширина для вертикального скролла */
+    background-color: $color-default-black;
+  }
+
+  /* ползунок скроллбара */
+  ::-webkit-scrollbar-thumb {
+    background-color: $color-curious-blue;
+    border-radius: 3em;
+    box-shadow: inset 1px 1px 3px $color-sugar-cane;
+  }
+
+  @include vp-1023 {
+    aspect-ratio: 309/386;
+  }
+
+  @include vp-767 {
+    aspect-ratio: 270/386;
+  }
+}
+
+.cruises__description-wrapper {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  background: #011c40;
+  display: none;
+}
+
+
+.cruises__description {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 2px 25px 18px;
+  color: $color-default-white;
+  background: $color-default-black;
+  box-shadow: 0 4px 35px rgba(1, 28, 64, 0.15);
+  display: none;
+  flex-direction: column;
+
+  @include vp-1023 {
+    padding: 0 35px 19px;
+  }
+
+  @include vp-767 {
+    padding: 0 25px 20px;
+  }
+}
+
+.cruises__description h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  margin: 0 0 2px;
+
+  @include vp-1023 {
+    margin: 0 0 2px;
+  }
+}
+
+.cruises__description p {
+  margin: 0 0 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: $color-quartz;
+
+  @include vp-1023 {
+    margin-bottom: 11px;
+  }
+}
+
+.cruises__description .cruises__link {
+  background-color: $color-default-white;
+  margin-top: auto;
+}
+
+.cruises__item:hover,
+.cruises__item:focus,
+.cruises__item:focus-within {
+  box-shadow: 0 0 40px 20px $color-curious-blue;
+  background: $color-default-black;
+  z-index: 1;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.cruises__item:hover .cruises__description-wrapper,
+.cruises__item:focus .cruises__description-wrapper,
+.cruises__item:focus-within .cruises__description-wrapper {
+  display: block;
+  overflow-y: auto;
+  overflow-x: visible;
+}
+
+.cruises__item:hover .cruises__description,
+.cruises__item:focus .cruises__description,
+.cruises__item:focus-within .cruises__description {
+  display: flex;
+}
+
+.cruises__item:hover h3,
+.cruises__item:focus h3,
+.cruises__item:focus-within h3 {
+  position: static;
+  align-self: flex-start;
+  height: fit-content;
+  margin: 0;
+  width: 100%;
+  max-width: auto;
+  background-color: $color-default-black;
+  padding: 28px 25px 14px;
+
+  @include vp-1023 {
+    padding: 28px 25px 15px 35px;
+  }
+
+  @include vp-767 {
+    padding: 27px 25px 15px;
+  }
+}
+
+.cruises__item:hover img,
+.cruises__item:focus img,
+.cruises__item:focus-within img {
+  display: none;
+}
+
+.cruises__link:hover,
+.cruises__link:focus,
+.cruises__link:focus-within {
+  color: $color-quartz;
+  background-color: $color-curious-blue;
+  outline: $color-curious-blue;
+}

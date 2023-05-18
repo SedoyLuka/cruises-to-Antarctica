@@ -1,18 +1,17 @@
 .btn {
-  display: inline-flex;
-  padding: 10px 20px;
-
-  color: $color-default-white;
-
-  background-color: $color-neon-blue;
+  display: block;
+  text-align: center;
   border: none;
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: $color-default-black;
+  padding: 10px 14px;
   cursor: pointer;
-
-  transition: opacity $trans-default;
-
-  &--red {
-    background-color: $color-torch-red;
-  }
+  background-color: $color-default-white;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
 
   &:disabled {
     opacity: 0.5;
@@ -20,7 +19,19 @@
     pointer-events: none;
   }
 
-  @include hover-focus {
-    opacity: 0.8;
+  &--card {
+    padding: 10px 5px;
   }
+}
+
+.btn:focus-visible,
+.btn:focus,
+.btn:hover {
+  color: $color-quartz;
+  background-color: $color-curious-blue;
+  outline: $color-curious-blue;
+}
+
+.btn:active {
+  opacity: 0.4;
 }

@@ -1,0 +1,146 @@
+.contacts {
+  background-color: $color-default-white;
+}
+
+.contacts__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 117px 50px 122px;
+
+  @include vp-1023 {
+    padding: 100px 45px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    padding: 38px 10px 65px 14px;
+  }
+}
+
+.contacts__map-wrapper {
+  width: 48%;
+  height: auto;
+  min-width: 560px;
+  min-height: 306px;
+  background-color: $color-sugar-cane;
+  background-image: image-set("../img/map-desktop@2x.webp" 2x, "../img/map-desktop.webp" 1x);
+  background-repeat: no-repeat;
+
+  @include vp-1023 {
+    background-image: image-set("../img/map-tablet@2x.webp" 2x, "../img/map-tablet.webp" 1x);
+    min-width: 324px;
+    min-height: auto;
+    width: 324px;
+    height: 335px;
+  }
+
+  @include vp-767 {
+    background-image: image-set("../img/map-mobile@2x.webp" 2x, "../img/map-mobile.webp" 1x);
+    min-width: 290px;
+    max-width: 355px;
+    width: 100%;
+    height: 316px;
+    background-size: cover;
+    margin: 0 auto;
+    order: 2;
+  }
+}
+
+.contacts__map {
+  width: 100%;
+  height: 100%;
+}
+
+.contacts__content {
+  width: 45%;
+  padding: 59px 5px 5px 20px;
+
+  @include vp-1023 {
+    width: 52%;
+    padding: 47px 5px 11px 28px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    order: 1;
+    padding: 0;
+  }
+}
+
+.contacts__break {
+  display: none;
+
+  @include vp-1023 {
+    display: block;
+  }
+}
+
+.contacts__list {
+  padding-left: 30px;
+  list-style: none;
+  margin-top: 30px;
+
+  @include vp-1023 {
+    margin-top: 27px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 39px;
+  }
+}
+
+.contacts__item {
+  position: relative;
+  margin-bottom: 22px;
+
+  &::before {
+    position: absolute;
+    top: 3px;
+    left: -28px;
+    content: "";
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include vp-1023 {
+      top: 5px;
+    }
+  }
+
+  &--address::before {
+    width: 18px;
+    height: 22px;
+    background-image: url("../img/svg/map-icon.svg");
+  }
+
+  &--phone::before {
+    width: 18px;
+    height: 18px;
+    background-image: url("../img/svg/phone-icon.svg");
+  }
+
+  @include vp-1023 {
+    margin-bottom: 20px;
+  }
+}
+
+.contacts p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.contacts__link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    color: $color-quartz;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
