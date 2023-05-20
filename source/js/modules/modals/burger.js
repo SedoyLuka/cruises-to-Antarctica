@@ -1,59 +1,55 @@
 import {FocusLock} from "../../utils/focus-lock";
 
-const HEADER_NAV = document.querySelector(".header");
-const HEADER_TOGGLE = document.querySelector(".header__toggle");
-const BODY = document.body;
-const HEADER_LIST = document.querySelector(".header__list");
-const HEADER_LINK = document.querySelectorAll(".header__link");
+const body = document.body;
+const header = document.querySelector(".header");
+const headerNav = header.querySelector(".header__navigation-wrapper");
+const headerToggle = headerNav.querySelector(".header__toggle");
+const headerLinks = headerNav.querySelectorAll(".header__link");
+const focusLock = new FocusLock();
+const onClickLink = closeMenu;
 
 function closeMenu() {
-  BODY.classList.remove("page-lock");
-  HEADER_NAV.classList.add("header--closed");
-  HEADER_NAV.classList.remove("header--opened");
+  focusLock.unlock();
+  body.classList.remove("page-lock");
+  header.classList.add("header--closed");
+  header.classList.remove("header--opened");
+
+  headerLinks.forEach((link) => {
+    link.removeEventListener("click", onClickLink);
+  });
 }
 
 function openMenu() {
-  BODY.classList.add("page-lock");
-  HEADER_NAV.classList.remove("header--closed");
-  HEADER_NAV.classList.add("header--opened");
+  focusLock.lock(".header");
+  body.classList.add("page-lock");
+  header.classList.remove("header--closed");
+  header.classList.add("header--opened");
+
+  headerLinks.forEach((link) => {
+    link.addEventListener("click", onClickLink);
+  });
 }
 
-function clickOnToggle() {
-  const focusLock = new FocusLock();
-  HEADER_TOGGLE.addEventListener("click", function () {
-    if (HEADER_NAV.classList.contains("header--closed")) {
+function initBurger() {
+  headerToggle.addEventListener("click", function () {
+    if (header.classList.contains("header--closed")) {
       openMenu();
-      focusLock.lock(".header");
     } else {
       closeMenu();
-      focusLock.unlock();
     }
-
-    HEADER_LINK.forEach((link) => {
-      link.addEventListener("click", () => {
-        closeMenu();
-      });
-    });
   });
-  focusLock.unlock();
-}
 
-
-function clickOnBody() {
-  const focusLock = new FocusLock();
   document.addEventListener("click", function (evt) {
-    let target = evt.target;
-    let headerList = target === HEADER_LIST || HEADER_LIST.contains(target);
-    let toggle = target === HEADER_TOGGLE;
-    let headerNav = HEADER_NAV.classList.contains("header--opened");
+    const target = evt.target;
+    const headerIsTarget = target === headerNav || headerNav.contains(target);
+    const headerIsOpened = header.classList.contains("header--opened");
 
-    if (!headerList && !toggle && headerNav) {
+    if (!headerIsTarget && headerIsOpened) {
       closeMenu();
-      focusLock.unlock();
     }
   });
-  BODY.classList.remove("page-lock");
-  focusLock.unlock();
+
+  header.classList.remove("header--nojs");
 }
 
-export {clickOnToggle, clickOnBody, closeMenu};
+export {initBurger};
