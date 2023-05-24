@@ -19,8 +19,9 @@
 
 .contacts__map-wrapper {
   width: 48%;
+  max-width: 561px;
   height: auto;
-  min-width: 560px;
+  // min-width: 560px;
   min-height: 306px;
   background-color: $color-sugar-cane;
   background-image: image-set("../img/map-desktop@2x.webp" 2x, "../img/map-desktop.webp" 1x);
@@ -30,14 +31,14 @@
     background-image: image-set("../img/map-tablet@2x.webp" 2x, "../img/map-tablet.webp" 1x);
     min-width: 324px;
     min-height: auto;
-    width: 324px;
+    max-width: 325px;
     height: 335px;
   }
 
   @include vp-767 {
     background-image: image-set("../img/map-mobile@2x.webp" 2x, "../img/map-mobile.webp" 1x);
     min-width: 290px;
-    max-width: 355px;
+    // max-width: 355px;
     width: 100%;
     height: 316px;
     background-size: cover;
@@ -92,6 +93,10 @@
 .contacts__item {
   position: relative;
   margin-bottom: 22px;
+
+  &--address {
+    pointer-events: none;
+  }
 
   &::before {
     position: absolute;

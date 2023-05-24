@@ -1,6 +1,6 @@
 .header {
   min-height: 650px;
-  width: 100%;
+  // width: 100%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: $color-curious-blue;
   background-image: image-set("../img/background/background-desktop@2x.webp" 2x, "../img/background/background-desktop.webp" 1x);
@@ -15,7 +15,7 @@
 
   @include vp-767 {
     min-height: 500px;
-    background-image: image-set("../img/background/background-mobile@2x.webp" 2x, "../img/background/background-mobile.webp" 1x);
+    // background-image: image-set("../img/background/background-mobile@2x.webp" 2x, "../img/background/background-mobile.webp" 1x);
   }
 }
 
