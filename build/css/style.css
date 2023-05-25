@@ -355,6 +355,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -601,6 +602,7 @@ button,
   background-image: image-set("../img/background/background-desktop@2x.webp" 2x, "../img/background/background-desktop.webp" 1x);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 100%;
 }
 @media (max-width: 1023px) {
   .header {
@@ -769,7 +771,7 @@ button,
   padding: 0;
   width: 24px;
   height: 16px;
-  background-image: url("/img/svg/burger.svg");
+  background-image: url("../img/svg/burger.svg");
   background-color: transparent;
   background-position: center center;
   background-repeat: no-repeat;
@@ -911,7 +913,7 @@ button,
 
 @media (max-width: 767px) {
   .header--opened .header__toggle {
-    background-image: url("/img/svg/close.svg");
+    background-image: url("../img/svg/close.svg");
     margin-right: 10px;
     z-index: 12;
   }
@@ -1370,6 +1372,8 @@ button,
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
 }
 
 .cruises__item {
@@ -1840,9 +1844,6 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding: 117px 50px 122px;
 }
 @media (max-width: 1023px) {
@@ -1907,7 +1908,7 @@ button,
 @media (max-width: 1023px) {
   .contacts__content {
     width: 52%;
-    padding: 47px 5px 11px 28px;
+    padding: 47px 0px 11px 100px;
   }
 }
 @media (max-width: 767px) {
@@ -2124,6 +2125,16 @@ button,
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  cursor: default;
+}
+.footer__logo:hover {
+  opacity: 0.5;
+}
+@media (max-width: 1023px) {
+  .footer__logo {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }
 @media (max-width: 1023px) {
   .footer__logo {

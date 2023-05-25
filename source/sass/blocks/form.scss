@@ -7,6 +7,7 @@
   background: $color-default-black;
   box-shadow: 0 4px 45px rgba($color-default-black, 0.15);
   padding: 24px 50px 51px;
+  align-content: start;
 
   @include vp-1023 {
     max-width: 403px;

@@ -4,7 +4,7 @@
 
 .contacts__container {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 117px 50px 122px;
 
   @include vp-1023 {
@@ -58,7 +58,7 @@
 
   @include vp-1023 {
     width: 52%;
-    padding: 47px 5px 11px 28px;
+    padding: 47px 0 11px 100px;
   }
 
   @include vp-767 {

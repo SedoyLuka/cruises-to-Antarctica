@@ -6,6 +6,7 @@
   background-image: image-set("../img/background/background-desktop@2x.webp" 2x, "../img/background/background-desktop.webp" 1x);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 100%;
 
   @include vp-1023 {
     min-height: 638px;
@@ -88,6 +89,7 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
 
   @include vp-1023 {
     margin: 1px 5px 0 0;
@@ -140,7 +142,7 @@
   padding: 0;
   width: 24px;
   height: 16px;
-  background-image: url("/img/svg/burger.svg");
+  background-image: url("../img/svg/burger.svg");
   background-color: transparent;
   background-position: center center;
   background-repeat: no-repeat;
@@ -269,7 +271,7 @@
 
 .header--opened .header__toggle {
   @include vp-767 {
-    background-image: url("/img/svg/close.svg");
+    background-image: url("../img/svg/close.svg");
     margin-right: 10px;
     z-index: 12;
   }
